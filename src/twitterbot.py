@@ -18,12 +18,10 @@ my_file.close()
 def tweet():
     for line in file_lines:
         try:
-             print(line)
-             if line != '\n':
-                 api.update_status(line)
-                 sleep(3600)
-             else:
-                pass
+            print(line)
+            if line != '\n':
+                api.update_status(line)
+                sleep(3600)
         except tweepy.TweepError as e:
             print(e.reason)
             sleep(2)
